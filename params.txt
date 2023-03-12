@@ -1,0 +1,135 @@
+random search: n_estimators = 50-1000, max_depth = 2-50
+
+best hyperparams rf: {'max_depth': 20, 'n_estimators': 309}best accuracy rf: 0.8934788053033073
+best hyperparams rf: {'max_depth': 46, 'n_estimators': 960}best accuracy rf: 0.8924019246369973
+best hyperparams rf: {'max_depth': 21, 'n_estimators': 848}best accuracy rf: 0.8924881314855719
+best hyperparams rf: {'max_depth': 49, 'n_estimators': 924}best accuracy rf: 0.8926173211764423
+best hyperparams rf: {'max_depth': 21, 'n_estimators': 521}best accuracy rf: 0.8927896513937515
+best hyperparams rf: {'max_depth': 42, 'n_estimators': 184}best accuracy rf: 0.8925742826809199
+best hyperparams rf: {'max_depth': 24, 'n_estimators': 817}best accuracy rf: 0.8923156714107332
+best hyperparams rf: {'max_depth': 18, 'n_estimators': 545}best accuracy rf: 0.8913680824662098
+best hyperparams rf: {'max_depth': 25, 'n_estimators': 489}best accuracy rf: 0.8921863611378711
+best hyperparams rf: {'max_depth': 49, 'n_estimators': 348}best accuracy rf: 0.8908080069410704
+best hyperparams rf: {'max_depth': 24, 'n_estimators': 360}best accuracy rf: 0.8912818848931726
+best hyperparams rf: {'max_depth': 31, 'n_estimators': 958}best accuracy rf: 0.8926603225698138
+best hyperparams rf: {'max_depth': 20, 'n_estimators': 360}best accuracy rf: 0.8930479751222654
+best hyperparams rf: {'max_depth': 36, 'n_estimators': 598}best accuracy rf: 0.8914973556369207
+best hyperparams rf: {'max_depth': 23, 'n_estimators': 593}best accuracy rf: 0.8937802881093356
+best hyperparams rf: {'max_depth': 20, 'n_estimators': 695}best accuracy rf: 0.8919712057624093
+
+random search: n_estimators = 200-800, max_depth = 15-25
+
+best hyperparams rf: {'max_depth': 19, 'n_estimators': 440}best accuracy rf: 0.8930474835187606
+best hyperparams rf: {'max_depth': 24, 'n_estimators': 393}best accuracy rf: 0.8940814277204641
+best hyperparams rf: {'max_depth': 24, 'n_estimators': 639}best accuracy rf: 0.8928753017100567
+best hyperparams rf: {'max_depth': 22, 'n_estimators': 485}best accuracy rf: 0.8935214171240897
+best hyperparams rf: {'max_depth': 21, 'n_estimators': 605}best accuracy rf: 0.8932629264358951
+best hyperparams rf: {'max_depth': 19, 'n_estimators': 670}best accuracy rf: 0.8942106730645618
+best hyperparams rf: {'max_depth': 20, 'n_estimators': 485}best accuracy rf: 0.8939522565806695
+best hyperparams rf: {'max_depth': 18, 'n_estimators': 527}best accuracy rf: 0.8939522102029803
+best hyperparams rf: {'max_depth': 20, 'n_estimators': 715}best accuracy rf: 0.8936938679233908
+best hyperparams rf: {'max_depth': 19, 'n_estimators': 422}best accuracy rf: 0.8942538506931517
+
+random search: n_estimators = 300-700, max_depth = 18-25
+best hyperparams rf: {'max_depth': 21, 'n_estimators': 486}best accuracy rf: 0.8908943250960991
+best hyperparams rf: {'max_depth': 24, 'n_estimators': 697}best accuracy rf: 0.8915835161078063
+best hyperparams rf: {'max_depth': 22, 'n_estimators': 682}best accuracy rf: 0.8929617868247665
+best hyperparams rf: {'max_depth': 24, 'n_estimators': 359}best accuracy rf: 0.8921434061221888
+best hyperparams rf: {'max_depth': 18, 'n_estimators': 699}best accuracy rf: 0.891971168660258
+best hyperparams rf: {'max_depth': 21, 'n_estimators': 388}best accuracy rf: 0.8927032868610338
+
+random search: n_estimators = 50-2000, max_depth = 15-45
+best hyperparams rf: {'max_depth': 20, 'n_estimators': 572}best accuracy rf: 0.8948569739893515
+best hyperparams rf: {'max_depth': 21, 'n_estimators': 480}best accuracy rf: 0.8945555097343988
+best hyperparams rf: {'max_depth': 21, 'n_estimators': 688}best accuracy rf: 0.8949001330668658
+best hyperparams rf: {'max_depth': 21, 'n_estimators': 651}best accuracy rf: 0.8896878187886408
+best hyperparams rf: {'max_depth': 22, 'n_estimators': 507}best accuracy rf: 0.8897309129373904
+best hyperparams rf: {'max_depth': 19, 'n_estimators': 251}best accuracy rf: 0.8896448173952696
+best hyperparams rf: {'max_depth': 21, 'n_estimators': 719}best accuracy rf: 0.8945984554745431
+best hyperparams rf: {'max_depth': 24, 'n_estimators': 729}best accuracy rf: 0.8948999290050335
+best hyperparams rf: {'max_depth': 26, 'n_estimators': 827}best accuracy rf: 0.8946845695677397
+best hyperparams rf: {'max_depth': 20, 'n_estimators': 298}best accuracy rf: 0.8945984090968538
+best hyperparams rf: {'max_depth': 24, 'n_estimators': 960}best accuracy rf: 0.8950292021757443
+best hyperparams rf: {'max_depth': 25, 'n_estimators': 606}best accuracy rf: 0.894296842810985
+best hyperparams rf: {'max_depth': 43, 'n_estimators': 289}best accuracy rf: 0.8941247073799703
+best hyperparams rf: {'max_depth': 23, 'n_estimators': 925}best accuracy rf: 0.8949430046027075
+best hyperparams rf: {'max_depth': 24, 'n_estimators': 833}best accuracy rf: 0.8952875908330229
+best hyperparams rf: {'max_depth': 25, 'n_estimators': 573}best accuracy rf: 0.8948999475561091
+best hyperparams rf: {'max_depth': 23, 'n_estimators': 355}best accuracy rf: 0.8945983998213162
+best hyperparams rf: {'max_depth': 26, 'n_estimators': 834}best accuracy rf: 0.8944691915793699
+best hyperparams rf: {'max_depth': 25, 'n_estimators': 395}best accuracy rf: 0.8944261438083096
+best hyperparams rf: {'max_depth': 23, 'n_estimators': 581}best accuracy rf: 0.8950291557980552
+best hyperparams rf: {'max_depth': 24, 'n_estimators': 975}best accuracy rf: 0.8949430138782452
+best hyperparams rf: {'max_depth': 21, 'n_estimators': 286}best accuracy rf: 0.8947276915431026
+
+random search: n_estimators = 400-1100, max_depth = 15-30, metric = accuracy
+best hyperparams rf: {'max_depth': 25, 'n_estimators': 1019}best accuracy rf: 0.8949860802003812
+best hyperparams rf: {'max_depth': 22, 'n_estimators': 758}best accuracy rf: 0.8951582991112366
+best hyperparams rf: {'max_depth': 24, 'n_estimators': 448}best accuracy rf: 0.8950291650735931
+best hyperparams rf: {'max_depth': 23, 'n_estimators': 619}best accuracy rf: 0.8949430324293208
+
+random search: n_estimators = 50-1500, max_depth = 15-45, metric = f1
+best hyperparams rf: {'max_depth': 30, 'n_estimators': 1493}best accuracy rf: 0.8319455541295969
+best hyperparams rf: {'max_depth': 39, 'n_estimators': 503}best accuracy rf: 0.8323576048086615
+best hyperparams rf: {'max_depth': 26, 'n_estimators': 966}best accuracy rf: 0.8316136970167923
+best hyperparams rf: {'max_depth': 23, 'n_estimators': 814}best accuracy rf: 0.8317159820662443
+best hyperparams rf: {'max_depth': 26, 'n_estimators': 1480}best accuracy rf: 0.8312039268549875
+
+random search: n_estimators = 50-1500, max_depth = 15-45, metric = precision
+best hyperparams rf: {'max_depth': 21, 'n_estimators': 920}best accuracy rf: 0.8732561702310372
+best hyperparams rf: {'max_depth': 19, 'n_estimators': 1045}best accuracy rf: 0.8748502586848025
+best hyperparams rf: {'max_depth': 17, 'n_estimators': 1394}best accuracy rf: 0.8731500313854303
+best hyperparams rf: {'max_depth': 19, 'n_estimators': 1063}best accuracy rf: 0.8746445502359446
+best hyperparams rf: {'max_depth': 26, 'n_estimators': 1108}best accuracy rf: 0.8718961668685257
+
+random search: n_estimators = 50-1500, max_depth = 15-45, metric = recall
+best hyperparams rf: {'max_depth': 29, 'n_estimators': 1016}best accuracy rf: 0.7950590291828408
+best hyperparams rf: {'max_depth': 38, 'n_estimators': 543}best accuracy rf: 0.7958469477645874
+best hyperparams rf: {'max_depth': 35, 'n_estimators': 1268}best accuracy rf: 0.7953218412721968
+best hyperparams rf: {'max_depth': 25, 'n_estimators': 1196}best accuracy rf: 0.7950589429017871
+best hyperparams rf: {'max_depth': 34, 'n_estimators': 686}best accuracy rf: 0.7953223589585187
+
+random search: n_estimators = 750-1250, max_depth = 15-40, metric = accuracy, precision, recall, f1
+best hyperparams rf: {'max_depth': 34, 'n_estimators': 1037}best accuracy: 0.8942969819440526
+best hyperparams rf: {'max_depth': 24, 'n_estimators': 1231}best accuracy: 0.89528764648625
+best hyperparams rf: {'max_depth': 22, 'n_estimators': 1177}best precision: 0.8723498841881849
+best hyperparams rf: {'max_depth': 38, 'n_estimators': 1166}best recall: 0.7961100186971043
+best hyperparams rf: {'max_depth': 27, 'n_estimators': 994}best f1: 0.8321039830109684
+best hyperparams rf: {'max_depth': 21, 'n_estimators': 1241}best accuracy: 0.8946414846945279
+best hyperparams rf: {'max_depth': 22, 'n_estimators': 1237}best precision: 0.8740121185019291
+best hyperparams rf: {'max_depth': 38, 'n_estimators': 1046}best recall: 0.7949273642950019
+best hyperparams rf: {'max_depth': 21, 'n_estimators': 1092}best f1: 0.8318501635281719
+best hyperparams rf: {'max_depth': 25, 'n_estimators': 1172}best accuracy: 0.8948568255807461
+best hyperparams rf: {'max_depth': 19, 'n_estimators': 1192}best precision: 0.8744998727125385
+best hyperparams rf: {'max_depth': 31, 'n_estimators': 926}best recall: 0.7944017401162896
+best hyperparams rf: {'max_depth': 25, 'n_estimators': 1123}best f1: 0.8313608285262879
+best hyperparams rf: {'max_depth': 26, 'n_estimators': 870}best accuracy: 0.8942538692442273
+best hyperparams rf: {'max_depth': 22, 'n_estimators': 1014}best precision: 0.873656997369717
+best hyperparams rf: {'max_depth': 28, 'n_estimators': 983}best recall: 0.7966354703137093
+best hyperparams rf: {'max_depth': 25, 'n_estimators': 895}best f1: 0.8315356429518577
+best hyperparams rf: {'max_depth': 38, 'n_estimators': 886}best accuracy: 0.8945984647500808
+best hyperparams rf: {'max_depth': 17, 'n_estimators': 986}best precision: 0.8735115116539856
+best hyperparams rf: {'max_depth': 26, 'n_estimators': 753}best recall: 0.7953216687100897
+
+random search: n_estimators = 900-1100, max_depth = 20-35, metric = accuracy, precision, recall, f1
+
+best hyperparams rf: {'max_depth': 22, 'n_estimators': 996}best accuracy: 0.8948999382805713
+best hyperparams rf: {'max_depth': 20, 'n_estimators': 1082}best precision: 0.8746958002430262
+best hyperparams rf: {'max_depth': 31, 'n_estimators': 1010}best recall: 0.795321841272197
+best hyperparams rf: {'max_depth': 22, 'n_estimators': 952}best f1: 0.8325644296059973
+best hyperparams rf: {'max_depth': 21, 'n_estimators': 906}best accuracy: 0.8948999197294956
+best hyperparams rf: {'max_depth': 20, 'n_estimators': 929}best precision: 0.874862004041392
+best hyperparams rf: {'max_depth': 22, 'n_estimators': 954}best recall: 0.7951904352275189
+best hyperparams rf: {'max_depth': 23, 'n_estimators': 941}best f1: 0.8319530114046154
+best hyperparams rf: {'max_depth': 23, 'n_estimators': 1074}best accuracy: 0.8950291094203662
+best hyperparams rf: {'max_depth': 22, 'n_estimators': 956}best precision: 0.8741725296137266
+best hyperparams rf: {'max_depth': 29, 'n_estimators': 935}best recall: 0.7965042368311385
+best hyperparams rf: {'max_depth': 23, 'n_estimators': 1033}best f1: 0.831848847912265
+best hyperparams rf: {'max_depth': 26, 'n_estimators': 914}best accuracy: 0.8945553427747178
+best hyperparams rf: {'max_depth': 20, 'n_estimators': 901}best precision: 0.8746732104853969
+best hyperparams rf: {'max_depth': 29, 'n_estimators': 1024}best recall: 0.7951907803517333
+best hyperparams rf: {'max_depth': 22, 'n_estimators': 906}best f1: 0.8322277577416848
+best hyperparams rf: {'max_depth': 26, 'n_estimators': 965}best accuracy: 0.8947276544409511
+best hyperparams rf: {'max_depth': 21, 'n_estimators': 921}best precision: 0.8730496768426986
+best hyperparams rf: {'max_depth': 34, 'n_estimators': 927}best recall: 0.7957159731251774
+best hyperparams rf: {'max_depth': 23, 'n_estimators': 1038}best f1: 0.8317628022080292
