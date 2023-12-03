@@ -38,98 +38,51 @@ columns = [
 ]
 
 def process_data(csv_reader, isTraining=True):
-  csv_reader = list(csv_reader)
-  source = []
-  if not isTraining:
-    for i,row in enumerate(csv_reader):
-      copy_row = row.copy()
-      copy_row[10], copy_row[11] = copy_row[11], copy_row[10]
-      copy_row[11], copy_row[12] = copy_row[12], copy_row[11]
-      csv_reader[i] = copy_row
-  first = False
-  for row in csv_reader:
-    rowModified = []
-    if not first:
-      # columns = row
-      # print(row)
-      first = True
-      continue # skip the first row
-    day = 0
-    totalDays = 0
-    guests = 0
-    cancelRatio = 0
-    for j,cell in zip(range(19 if isTraining else 18),row):
-      # doesn't include bookingID, parking and year
+  header = next(csv_reader)  # Get the column names from the first row
+  col_index = {col: header.index(col) for col in header}
 
-      if j in {1,5,6,11,13,14,15,17}: 
-        rowModified.append(int(cell))
-      elif j == 3: # month
-        day = int(cell) * 30 # close enough
-        # rowModified.append(int(cell))
-      elif j == 4: # day
+  processed_data = []
+  for row in csv_reader:
+    day, totalDays, guests, cancelRatio = 0, 0, 0, 0
+    row_modified = []
+
+    for col, item in zip(header, row):
+      cell = item.strip()
+      if col in {'LeadTime', 'NumWeekendNights', 'NumWeekNights', 'NumAdults', 'RepeatedGuest', 'NumPrevCancellations', 'NumPreviousNonCancelled', 'SpecialRequests'}:
+        row_modified.append(int(cell))
+      elif col == 'ArrivalMonth':  # Month
+        day = int(cell) * 30  # Approximate days in a month
+      elif col == 'ArrivalDate':  # Day
         day += int(cell)
-        rowModified.append(day)
-      elif j == 5: # num weekend nights
-        totalDays += int(cell)
-      elif j == 6: # num week nights
-        totalDays += int(cell)
-        rowModified.append(totalDays) # total nights
-      elif j == 7: # skip meal plan
-        # continue
-        rowModified += [int(cell[-1] == x) for x in ['1', '2']] # one hot encoding if meal plan is 1 or 2 (or something else)
-      elif j in {9}: # room type
-        # ranking from worst room type to best room type
-        # 1: standard (1)
-        # 2: connecting (7)
-        # 3: deluxe (4)
-        # 4: suite (6)
-        # 5: boutique (5)
-        # 6: executive room (2)
-        # 7: presidential suite (3)
-        '''room_conversion = {
-          1: 1,
-          2: 7,
-          3: 4,
-          4: 6,
-          5: 5,
-          6: 2,
-          7: 3,
-        }
-        rowModified.append(int(cell[-1]))'''
+        row_modified.append(day)
+      elif col == 'RoomType':  # Room type
         # try grouping into 3 categories:
         # 1: standard (accounts for 2/3+)
         # 2: deluxe, suite and connecting (accounts for ~1/5)
         # 3: executive room, presidential suite and boutique (accounts for the rest)
-        room_conversion = {
-          1: 1,
-          2: 3,
-          3: 3,
-          4: 2,
-          5: 3,
-          6: 2,
-          7: 2,
-        }
-        # rowModified += [int(room_conversion[int(cell[-1])] == x) for x in [1,2,3]] # one hot encoding
-        rowModified.append(room_conversion[int(cell[-1])]) # label encoding
-      elif j == 12: # market segment
-        rowModified += [int(cell == x) for x in ['Aviation', 'Complementary', 'Corporate', 'Offline', 'Online']]
-      elif j == 10: # adults
+        room_conversion = {1: 1, 2: 3, 3: 3, 4: 2, 5: 3, 6: 2, 7: 2}
+        row_modified.append(room_conversion[int(cell[-1])]) # label encoding
+      elif col == 'MarketSegment':  # Market segment
+        row_modified.extend(int(cell == x) for x in ['Aviation', 'Complementary', 'Corporate', 'Offline', 'Online'])
+      elif col == 'NumAdults':  # Adults
         guests += int(cell)
-        rowModified.append(int(cell))
-      elif j == 11: # children
+        row_modified.append(int(cell))
+      elif col == 'NumChildren':  # Children
         guests += int(cell)
-        rowModified.append(guests) # total guests
-        rowModified.append(int(cell >= 1)) # has children
-      elif j == 14: # prev cancellations
+        row_modified.append(guests)  # Total guests
+        row_modified.append(int(cell) >= 1)  # Has children
+      elif col == 'NumPrevCancellations':  # Previous cancellations
         cancelRatio = int(cell)
-      elif j == 15: # prev non cancels
-        rowModified.append(min(1, cancelRatio) if int(cell) == 0 else cancelRatio/int(cell)) # add ratio
-      elif j == 16: # avg room price
-        rowModified.append(float(cell))
-      elif j == 18: # canceled col
+      elif col == 'NumPrevNonCancellations':  # Previous non-cancellations
+        row_modified.append(min(1, cancelRatio) if int(cell) == 0 else cancelRatio / int(cell))
+      elif col == 'AvgRoomPrice':  # Average room price
+        row_modified.append(float(cell))
+      elif col == 'BookingStatus' and isTraining:  # Canceled column (only for training)
         target.append(int(cell == 'Canceled'))
-    source.append(rowModified)
-  return source
+
+    processed_data.append(row_modified)
+
+  return processed_data
 
 
 train_source = []
@@ -142,13 +95,20 @@ with open('data/test_data.csv') as csv_file:
   csv_reader = csv.reader(csv_file, delimiter=',')
   test_source = process_data(csv_reader, isTraining=False)
 
-rf = RandomForestClassifier(max_depth=24, n_estimators=1000)
-rf.fit(train_source, target)
+rf = RandomForestClassifier(max_depth=22, n_estimators=996)
+X_train, X_test, y_train, y_test = train_test_split(train_source, target, test_size=0.2)
+rf.fit(X_train, y_train)
+test_pred = rf.predict(X_test)
+
+print('accuracy: ', accuracy_score(y_test, test_pred))
+print('precision: ', precision_score(y_test, test_pred))
+print('recall: ', recall_score(y_test, test_pred))
+print('f1: ', f1_score(y_test, test_pred))
+
+'''rf.fit(train_source, target)
 test_pred = rf.predict(test_source)
-# print('accuracy: ', accuracy_score(test_pred, target))
-# print('precision: ', precision_score(test_pred, target))
-# print('recall: ', recall_score(test_pred, target))
-# print('f1: ', f1_score(test_pred, target))
+
+
 
 with open('test_data_predicted.csv', 'w', newline='') as f:
   writer = csv.writer(f)
@@ -160,8 +120,7 @@ with open('test_data_predicted.csv', 'w', newline='') as f:
         writer.writerow(row)
       else:
         row[-1] = 'Canceled' if test_pred[i-1] == 1 else 'Not_Canceled'
-        writer.writerow(row)
-
+        writer.writerow(row)'''
 
 '''for _ in range(5): # testing
   X_train, X_test, y_train, y_test = train_test_split(source, target, test_size=0.2)
@@ -193,7 +152,7 @@ print('gbc accuracy: ', accuracy_gbc)
 '''
 
 param_dist = { # for randomized search
-  'n_estimators': randint(900,1100),
+  'n_estimators': randint(100,150),
   'max_depth': randint(20, 35),
 }
 
