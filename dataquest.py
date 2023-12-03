@@ -95,7 +95,7 @@ with open('data/test_data.csv') as csv_file:
   csv_reader = csv.reader(csv_file, delimiter=',')
   test_source = process_data(csv_reader, isTraining=False)
 
-rf = RandomForestClassifier(max_depth=22, n_estimators=996)
+rf = RandomForestClassifier(max_depth=24, n_estimators=800)
 X_train, X_test, y_train, y_test = train_test_split(train_source, target, test_size=0.2)
 rf.fit(X_train, y_train)
 test_pred = rf.predict(X_test)
